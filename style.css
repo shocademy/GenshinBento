@@ -1,0 +1,303 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(background.jfif) no-repeat center center fixed;
+    backdrop-filter: blur(10px);
+    background-size: cover;
+    overflow: hidden;
+}
+
+header{
+    color: white;
+    width: 100%;
+    position: fixed;
+    padding: 1em 12%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.185);
+}
+
+
+
+header .logo{
+    font-size: 2em;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+    transition: 0.3 ease-in-out;
+}
+
+.logo img{
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+header .logo:hover{
+    opacity: 1;
+    scale: 1.02;
+}
+
+
+header ul{
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    gap: 3em;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+ul li:hover{
+    opacity: 1;
+    color: #ffbd2f;
+    scale: 1.02;
+}
+
+#menu-icon{
+    font-size: 3em;
+    display: none;
+}
+
+section{
+    min-height: 100vh;
+    padding: 10% 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+}
+
+.info-box{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.info-box p{
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.info-box h1{
+    cursor: pointer;
+    font-size: 5em;
+    line-height: 1;
+}
+
+.info-box h3{
+    cursor: pointer;
+    font-size: 2em;
+}
+
+.info-box h1:hover{
+    scale: 1.02;
+}
+
+.info-box h3:hover{
+    scale: 1.02;
+}
+
+.info-box p:hover{
+    scale: 1.02;
+}
+
+.gradient-txt{
+    background: linear-gradient(270deg, #ffbd2f 10%, #ff6038 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+.btn-box{
+    display: flex;
+    gap: 1em;
+}
+
+.btn{
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    font-size: 1.2em;
+    background-color: white;
+    border: 2px solid transparent;
+    color: #ffbd2f;
+    transition: 0.2 ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #ffbd2f;
+    color: white;
+    border: 2px solid white;
+    scale: 1.02;
+}
+
+.bento-grid{
+    flex: 1;
+    height: 600px;
+    display: flex;
+    gap: 1em;
+}
+
+.col-left{
+    cursor: pointer;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.col-right{
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.box{
+    flex: 1;
+    border-radius: 1em;
+    display: flex;
+    gap: 1em;
+    transition: 0.2s ease-in-out;
+}
+
+.inner-box{
+    flex: 1;
+    border-radius: 1em;
+    overflow: hidden;
+    opacity: 0.8;
+    transition: 0.2 ease-in-out;
+}
+
+.col-left .inner-box:nth-of-type(1){
+    flex: 2;
+}
+
+.col-left .box:nth-of-type(2) .inner-box:nth-of-type(2){
+    flex: 3;
+}
+
+.col-left .box:nth-of-type(3) .inner-box{
+    flex: 1;
+}
+
+.inner-box:hover{
+    transform: scale(1.02);
+    opacity: 1;
+}
+
+.col-right .box:hover{
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.col-right .box{
+    overflow: hidden;
+}
+ 
+
+.modal {
+        /* Awalnya disembunyikan */
+        display: none; 
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        backdrop-filter: blur(100px);
+        align-items: center;
+        /* Latar belakang gelap */
+        /* background-color: rgba(0, 0, 0, 0.164);  */        
+    }
+    
+    .modal-content {
+        max-width: 50%;
+        max-height: 80%;
+        border-radius: 10px;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+    
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 2em;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .close:hover {
+        color: #ffbd2f;
+    }
+    
+
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @media (max-width:1200px) {
+        section{
+            flex-direction: column;
+            margin: 10em 2em;
+            padding: 10% 5%;
+        }
+        header ul{
+            display: none;
+        }
+        #menu-icon{
+            display: block;
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* Animasi untuk kemunculan gambar */
+
+    /* background-color: rgb(19, 19, 19);
+    color: white;
+    background: url(background.jfif); */
+    /* min-height: 100vh; */
